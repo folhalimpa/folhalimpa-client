@@ -1,0 +1,187 @@
+body {
+    font-family: sans-serif;
+}
+
+.main-image {
+    background: linear-gradient(rgba(255, 255, 255, 0.0), rgba(0, 0, 0, 0.7) 65%, #033649 100%), url("static/images/tambaba.jpg");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    height: 450px;
+}
+
+
+.main-title {
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 80px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.main-title img {
+    margin-bottom: 12px;
+}
+
+.search {
+    color: #ffffff;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-content {
+    background-color: #033649;
+    padding: 12px 0 24px 0;
+}
+
+.preset-query {
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border: #d1ffed 2px solid;
+    height: 250px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.preset-query p {
+    padding: 0 12px;
+}
+
+.preset-bg {
+    height: 250px;
+    width: 300px;
+    background-image: url("static/images/bayeux.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    transition: all .1s ease-in-out
+}
+
+.preset-bg-holder {
+    position: absolute;
+    top: 0;
+    height: 247px;
+    width: 296px;
+    overflow: hidden;
+}
+
+.preset-bg:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 247px;
+    width: 296px;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7) 90%);
+}
+
+.preset-query:hover .preset-bg {
+    filter: blur(3px);
+    transform: scale(1.25); 
+}
+
+.preset-query p {
+    opacity: 1.0;
+    color: #fff;
+    z-index: 1;
+}
+
+.type-select {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 1px;
+    -webkit-appearance: none;
+    text-align: center;
+    text-align-last: center;
+    margin: 0 6px;
+}
+
+.footer {
+    color: #fff;
+    padding: 12px 24px;
+    background-color: #031634;
+    text-align: center;
+}
+
+
+
+/*inside html*/
+
+.top-bar {
+    color: #fff;
+    background-color: #031634;
+    padding: 12px 0 8px 0;
+    text-align: center;
+}
+
+.top-bar h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.internal-content {
+    text-align: center;
+}
+
+h2  {
+    color: #033649;
+    margin: 30px 0 3px 0;
+    /* font-weight: bold; */
+}
+
+.time-period {
+    color: #999;
+}
+
+.stats {
+    margin: 0 0 24px 0;
+}
+
+
+#viz {
+    margin: 12px 0 24px 0;
+}
+
+.stats h3 {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.value {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+h3 {
+    color: #033649;
+}
+
+.search-form {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding: 12px 0;
+    margin: 0 24px 24px 36px;
+}
+
+.search-form input, .search-form select {
+    margin-right: 18px;
+}
+
+.form-inline input.date-field {
+    width: 100px
+}
+
+.form-inline input.large-input {
+    width: 250px
+}
