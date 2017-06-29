@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="folhaLimpaApp">
     <head>
         <title>Folha Limpa</title>
         <meta charset="UTF-8">
@@ -19,12 +19,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 top-bar">
-                    <h1>Folha Limpa</h1>
+                    <h1><a href="/">Folha Limpa</a></h1>
                 </div>
             </div>
         </div>
 
-        <div class="container internal-content">
+        <div class="container internal-content"  ng-controller="InternalController">
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Gastos na Câmara Municipal de Cabedelo</h2>
@@ -53,11 +53,11 @@
             <div class="row view-buttons">
                 <div class="col-lg-12">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default active">
+                        <button type="button" class="btn btn-default" ng-class="{active: activeButton === 'chart'}" ng-click="setActiveButton('chart')">
                             <i class="fa fa-bar-chart" aria-hidden="true"></i>
                             Gráfico
                         </button>
-                        <button type="button" class="btn btn-default">
+                        <button type="button" class="btn btn-default" ng-class="{active: activeButton === 'table'}" ng-click="setActiveButton('table')">
                             <i class="fa fa-table" aria-hidden="true"></i>
                             Tabela
                         </button>
@@ -69,18 +69,18 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-show="activeButton === 'chart'">
                 <div class="col-lg-12">
                     <div id="viz" style="height:400px;"></div>
                 </div>
             </div>
 
-            <!-- <div class="row"> -->
-            <!--     <div class="col&#45;lg&#45;12"> -->
-            <!--         <h2>Dados</h2> -->
-            <!--         <table id="datatable" class="table table&#45;striped table&#45;bordered" cellspacing="0" width="100%"></table>    -->
-            <!--     </div> -->
-            <!-- </div> -->
+            <div class="row" ng-show="activeButton === 'table'">
+                 <div class="col-lg-12">
+                     <h2>Dados</h2>
+                     <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>   
+                 </div>
+            </div> 
 
             <div class="row">
                 <div class="col-lg-12">
@@ -178,6 +178,7 @@ var visualization = d3plus.viz()
                 });
             });
         </script>
+        <script src="app/app.js"></script>
 
     </body>
 

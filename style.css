@@ -125,6 +125,15 @@ body {
     text-align: center;
 }
 
+.top-bar a {
+    color: #fff;
+}
+
+.top-bar a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
 .top-bar h1 {
     font-size: 22px;
     margin: 0;
@@ -185,3 +194,4 @@ h3 {
 .form-inline input.large-input {
     width: 250px
 }
+
