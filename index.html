@@ -46,12 +46,14 @@
 
             <div class="row main-content">
                 <div class="col-lg-4" ng-repeat="item in cases">
+                    <a href={{item.href}} class="no-underline">
                     <div class="preset-query">
                         <div class="preset-bg-holder">
                             <div class="preset-bg" style="background-image: url('static/images/{{item.img}}.png');"></div>
                         </div>
                         <p>{{item.title}}</p>
                     </div>
+                    </a>
                 </div>
             </div>
 
