@@ -12,6 +12,8 @@
         <link href="/style.css" rel="stylesheet">
 
         <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/countup.js/dist/countUp.js"></script>
+        <script src="/node_modules/countup.js/dist/angular-countUp.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="/node_modules/datatables.net/js/jquery.dataTables.js"></script>
@@ -48,16 +50,16 @@
             <div class="row stats">
                 <div class="col-lg-4">
                     <h3>Número de Pagamentos</h3>
-                    <p class="value">312</p>
+                    <p class="value" count-up end-val="312" duration="1.5" reanimate-on-click="false" >312</p>
                 </div>
 
                 <div class="col-lg-4">
                     <h3>Total Recebido</h3>
-                    <p class="value">R$ 613.425,23</p>
+                    <p class="value">R$ <span count-up end-val="613425.23" duration="1.5" decimals="2" reanimate-on-click="false"  options="{decimal: ',', separator: '.'}">613.425,23</span></p>
                 </div>
                 <div class="col-lg-4">
                     <h3>Mediana dos Pagamentos</h3>
-                    <p class="value">R$ 1.422,92</p>
+                    <p class="value"> R$ <span count-up end-val="1422.92" duration="1.5" decimals="2" reanimate-on-click="false"  options="{decimal: ',', separator: '.'}">1.422,92</span>
                 </div>
             </div>
 
@@ -196,6 +198,7 @@
 
         </script>
         <script src="app/app.js"></script>
+        
 
     </body>
 
