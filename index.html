@@ -12,6 +12,9 @@
         <script src="/node_modules/angular/angular.js"></script>
         <script src="/node_modules/countup.js/dist/countUp.js"></script>
         <script src="/node_modules/countup.js/dist/angular-countUp.js"></script>
+        <script src="/node_modules/angular-d3plus/src/angular-d3plus.js"></script>
+        <script src="/node_modules/angular-smart-table/dist/smart-table.js"></script>
+
     </head>
 
     <body>
@@ -51,7 +54,7 @@
                     <a href={{item.href}} class="no-underline">
                     <div class="preset-query">
                         <div class="preset-bg-holder">
-                            <div class="preset-bg" style="background-image: url('static/images/{{item.img}}.png');"></div>
+                            <div class="preset-bg" ng-style="{'background-image': 'url(static/images/{{item.img}}.png)'}"></div>
                         </div>
                         <p>{{item.title}}</p>
                     </div>

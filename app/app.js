@@ -1,4 +1,4 @@
-var folhaLimpaApp = angular.module('folhaLimpaApp', ['countUpModule']);
+var folhaLimpaApp = angular.module('folhaLimpaApp', ['countUpModule', 'angular-d3plus', 'smart-table']);
 
 folhaLimpaApp.controller('IndexController', ['$scope', function ($scope) {
     $scope.teste = 'abc';
@@ -8,7 +8,7 @@ folhaLimpaApp.controller('IndexController', ['$scope', function ($scope) {
 }]);
 
 
-folhaLimpaApp.controller('InternalController', ['$scope', function ($scope) {
+folhaLimpaApp.controller('InternalController', ['$scope', '$http', function ($scope, $http) {
     $scope.activeButton = 'chart';
 
     $scope.setActiveButton = function (buttonName) {
@@ -21,4 +21,21 @@ folhaLimpaApp.controller('InternalController', ['$scope', function ($scope) {
           separator: '.',
           decimal: ',',
     };
+
+    $scope.baseData = [];
+    $http.get("http://127.0.0.1:5000/servidor/").then(function(response) {
+        $scope.$broadcast("DataReady", {elementid: "barchart", data: response.data });
+    }, function(response) { console.log("erro") });
+
+    $scope.treemapData = []
+    $http.get("http://127.0.0.1:5000/ugestora/").then(function(response) {
+        $scope.$broadcast("DataReady", {elementid: "treemapchart", data: response.data });
+    }, function(response) { console.log("erro") });
+
+    $scope.tableDataX = [];
+    $http.get("http://127.0.0.1:5000/ugestora/").then(function(response) {
+        $scope.tableDataX = response.data;
+    }, function(response) { console.log("erro") });
+
+
 }]);
