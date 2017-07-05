@@ -32,9 +32,9 @@ folhaLimpaApp.controller('InternalController', ['$scope', '$http', function ($sc
         $scope.$broadcast("DataReady", {elementid: "treemapchart", data: response.data });
     }, function(response) { console.log("erro") });
 
-    $scope.tableDataX = [];
+    $scope.rowContent = [];
     $http.get("http://127.0.0.1:5000/ugestora/").then(function(response) {
-        $scope.tableDataX = response.data;
+        $scope.rowContent = response.data;
     }, function(response) { console.log("erro") });
 
 
