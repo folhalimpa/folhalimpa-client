@@ -1,13 +1,14 @@
 folhaLimpaApp.controller('AnalyzeFormController',
-    ['$scope', '$http', '$location', '$window', 'APIURL',
-    function ($scope, $http, $location, $window, APIURL) {
+    ['$scope', '$http', '$location', '$filter', '$window', 'APIURL',
+    function ($scope, $http, $location, $filter, $window, APIURL) {
 
     // load unidades gestoras
     $http.get(APIURL + "unidadesgestoras/?page_size=635").then(function(response) {
         $scope.names = response.data.results.map(function(element) {
-            var nome = element.nome;
-            if (element.nome.length > 50) {
-                return nome.slice(0, 50-3) + "...";
+            var nome = $filter("titleCase")(element.nome);
+
+            if (nome.length > 50) {
+                nome = nome.slice(0, 50-3) + "...";
             }
 
             return {nome: nome, id: element.id}; 
