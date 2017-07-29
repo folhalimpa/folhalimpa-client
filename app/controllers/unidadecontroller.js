@@ -1,6 +1,6 @@
 folhaLimpaApp.controller('UnidadeController',
-    ['$scope', '$http', '$routeParams', '$location', 'APIURL',
-    function ($scope, $http, $routeParams, $location, APIURL) {
+    ['$scope', '$http', '$routeParams', '$location', '$window', 'APIURL',
+    function ($scope, $http, $routeParams, $location, $window, APIURL) {
 
     var unidadeId = $routeParams.unidadeId;
     $scope.mesInicio = $routeParams.mesInicio;
@@ -14,12 +14,17 @@ folhaLimpaApp.controller('UnidadeController',
 
     var PAGAMENTOS_URL = `${APIURL}pagamentos/unidade/${unidadeId}?mes_inicio=${$scope.mesInicio}&ano_inicio=${$scope.anoInicio}&mes_fim=${$scope.mesFim}&ano_fim=${$scope.anoFim}`;
     var PAGAMENTOS_INFO_URL = `${APIURL}pagamentos_info/unidade/${unidadeId}?mes_inicio=${$scope.mesInicio}&ano_inicio=${$scope.anoInicio}&mes_fim=${$scope.mesFim}&ano_fim=${$scope.anoFim}`;
+    var PAGAMENTOS_CSV_URL = `${APIURL}pagamentos_csv/unidade/${unidadeId}?mes_inicio=${$scope.mesInicio}&ano_inicio=${$scope.anoInicio}&mes_fim=${$scope.mesFim}&ano_fim=${$scope.anoFim}&page_size=500`;
 
     $scope.activeButton = 'chart';
 
     $scope.setActiveButton = function (buttonName) {
         $scope.activeButton = buttonName;
-    }
+    };
+
+    $scope.downloadCSV = function() {
+        $window.location.href = PAGAMENTOS_CSV_URL;
+    };
 
     // carrega informações sobre os pagamentos de uma unidade gestora
     var loadInfo = function() {
