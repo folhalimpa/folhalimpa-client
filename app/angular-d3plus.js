@@ -240,7 +240,8 @@
                     id: '@',
                     size: '@?',
                     format: '@?',
-                    resize: '@?'
+                    resize: '@?',
+                    text: '@?'
                 }),
                 template: angularD3plusUtils.template,
                 link: angularD3plusUtils.link,
@@ -306,6 +307,7 @@
                     if ($scope.tooltip) services.setvar($scope.viz.tooltip, $scope.tooltip);
                     if ($scope.format) services.setvar($scope.viz.format, $scope.format);
                     if ($scope.resize) services.setvar($scope.viz.resize, $scope.resize);
+                    if ($scope.text) services.setvar($scope.viz.text, $scope.text);
                     $scope.viz.type(type);
                 },
                 scope: function(typescope) {

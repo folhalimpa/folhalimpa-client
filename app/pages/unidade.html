@@ -1,0 +1,150 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 top-bar">
+                    <h1><a href="/">Folha Limpa</a></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container internal-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Gastos na {{unidadeName | titleCase}}</h2>
+                    <p class="time-period">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{mesInicioText}}/{{anoInicio}} - {{mesFimText}}/{{anoFim}}</p>
+                </div>
+            </div>
+
+            <div ng-show="totalPagamentos == 0" class="row">
+                <div class="col-lg-8 col-lg-offset-2 alert alert-warning period-alert">
+                <h3>Não existem pagamentos efetuados no período especificado. Utilize o formulário abaixo para fazer uma nova consulta.</h3>
+                </div>
+            </div>
+
+            <div ng-show="totalPagamentos != 0" class="row stats">
+                <div class="col-lg-4">
+                    <h3>Número de Pagamentos</h3>
+                    <p class="value" count-up end-val="totalPagamentos" duration="1.5" reanimate-on-click="false" options="{decimal: ',', separator: '.'}">{{totalPagamentos}}</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h3>Total Pago</h3>
+                    <p class="value">R$ <span count-up end-val="totalPago" duration="1.5" decimals="2" reanimate-on-click="false" options="{decimal: ',', separator: '.'}">{{total}}</span></p>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Média dos Pagamentos</h3>
+                    <p class="value"> R$ <span count-up end-val="media" duration="1.5" decimals="2" reanimate-on-click="false"  options="{decimal: ',', separator: '.'}">{{media}}</span>
+                </div>
+            </div>
+
+            <div ng-show="totalPagamentos != 0" class="row view-buttons">
+                <div class="col-lg-12">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-class="{active: activeButton === 'chart'}" ng-click="setActiveButton('chart')">
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                            Gráfico
+                        </button>
+                        <button type="button" class="btn btn-default" ng-class="{active: activeButton === 'table'}" ng-click="setActiveButton('table')">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            Tabela
+                        </button>
+                        <button type="button" class="btn btn-default">
+                            <i class="fa fa-share" aria-hidden="true"></i>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-show="activeButton === 'chart' && totalPagamentos != 0">
+                <div class="col-lg-12 viz">
+                    <d3plus-treemap elementid="treemapchart" data="treemapData" id="id" size="pagamento" format="pt_BR" resize="true" text="text" style="height: 400px"></d3plus-bar>
+                </div>
+            </div>
+
+            <div class="row" ng-show="activeButton === 'table' && totalPagamentos != 0">
+                 <div class="col-lg-12">
+                    <table st-table="tableData" st-safe-src="rowContent" class="table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>                                
+                                <th colspan="4">
+                                    <input st-search placeholder="Procurar" class="input-sm form-control" type="search" />
+                                </th>
+                            </tr>
+                            <tr>
+                                <th st-sort="name">Nome</th>
+                                <th st-sort="cargo">Cargo</th>
+                                <th st-sort="data">Data</th>
+                                <th st-sort="pagamento">Pagamento</th>                            
+                            </tr>         
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in tableData">
+                                <td><a ng-href="#!/servidor/{{row.idServidor}}/{{mesInicio}}/{{anoInicio}}/{{mesFim}}/{{anoFim}}">{{row.name | titleCase}}</a></td>
+                                <td>{{row.cargo | titleCase}}</td>
+                                <td>{{row.data}}</td>
+                                <td>{{row.pagamento | currency:"R$ "}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-center">
+                                    <div st-pagination="" st-items-by-page="25" st-displayed-pages="20"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <img ng-show="tableLoading" src="/static/images/load.gif">
+                 </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Faça sua Análise</h3>
+                </div>
+            </div>
+
+            <div class="row form-inline" ng-controller="AnalyzeFormController">
+                <form method="post" class="search-form">
+                    <div class="form-group">
+                        <label for="name">Unidade Gestora:</label>
+
+                        <select selectpicker ng-model="model"
+                            toggle-dropdown
+                            data-live-search="true"
+                            data-none-selected-text=""
+                            data-size=10
+                            ng-options="c.nome for c in names">
+                        </select>
+
+                        <label for="name">De:</label>
+                        <span class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="datePopups.opened1" datepicker-options="dateOptions" alt-input-formats="altInputFormats" show-button-bar="{{false}}" ng-click="openDatePopup1()"/> 
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openDatePopup1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </span>
+
+                        <label for="name">Até:</label>
+                        <span class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="datePopups.opened2" datepicker-options="dateOptions" alt-input-formats="altInputFormats" show-button-bar="{{false}}" ng-click="openDatePopup2()"/> 
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openDatePopup2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </span>
+
+                        <button class="btn btn-default" ng-click="analyze()">Analisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row footer">
+                <div class="col-lg-12">
+                    Projeto desenvolvido no Hackfest 2017
+                </div>
+            </div>
+        </div>
+

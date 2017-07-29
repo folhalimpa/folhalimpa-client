@@ -10,7 +10,6 @@ body {
     height: 450px;
 }
 
-
 .main-title {
     color: #ffffff;
     font-size: 50px;
@@ -30,6 +29,7 @@ body {
     text-align: center;
     margin-top: 50px;
 }
+
 
 .search-button {
     text-align: center;
@@ -100,15 +100,14 @@ a.no-underline:hover {
     text-decoration: none;
 }
 
-.type-select {
-    background-color: rgba(0,0,0,0);
-    border: none;
-    border-bottom: 2px solid #fff;
-    border-radius: 1px;
-    -webkit-appearance: none;
-    text-align: center;
-    text-align-last: center;
-    margin: 0 6px;
+div.unidade-picker {
+    width: 300px !important;
+}
+
+.unidade-picker button.selectpicker {
+    font-size: 18px;
+    width: 300px;
+    height: 46px;
 }
 
 .footer {
@@ -117,8 +116,6 @@ a.no-underline:hover {
     background-color: #031634;
     text-align: center;
 }
-
-
 
 /*inside html*/
 
@@ -201,16 +198,40 @@ h3 {
 
 .st-sort-ascent:before {
     content: '\25B2';
-  }
+}
 
-  .st-sort-descent:before {
+.st-sort-descent:before {
     content: '\25BC';
-  }
+}
 
-  th {
-      text-align: center;
-  }
+th {
+    text-align: center;
+}
 
-  td {
-      width: 522px;
-  }
+td {
+    width: 522px;
+}
+
+
+.period-alert {
+    padding: 24px 32px;
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+.period-alert h3 {
+    color: #8a6d3b;
+    margin: 0;
+    line-height: 32px;
+}
+
+.autocompletetext {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+.datepicker + div {
+    display: inline;
+}
+

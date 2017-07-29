@@ -7,70 +7,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+        <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="/style.css" rel="stylesheet">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 
         <script src="/node_modules/angular/angular.js"></script>
+        <script src="app/angular-locale_pt-br.js"></script>
+        <script src="/node_modules/angular-route/angular-route.js"></script>
         <script src="/node_modules/countup.js/dist/countUp.js"></script>
         <script src="/node_modules/countup.js/dist/angular-countUp.js"></script>
-        <script src="app/angular-d3plus.js"></script>
         <script src="/node_modules/angular-smart-table/dist/smart-table.js"></script>
+        <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        
+        <script src="/node_modules/d3/d3.js"></script>
+        <script src="/node_modules/d3plus/d3plus.js"></script>
+        <script src="app/angular-d3plus.js"></script>
 
+        <script src="app/ng-bootstrap-select.js"></script>
+
+        <script src="app/app.js"></script>
+        <script src="app/controllers/initialcontroller.js"></script>
+        <script src="app/controllers/unidadecontroller.js"></script>
+        <script src="app/controllers/servidorcontroller.js"></script>
+        <script src="app/controllers/analyzeformcontroller.js"></script>
+        <script src="app/filters.js"></script>
+        <script src="app/constants.js"></script>
     </head>
 
     <body>
-        <div class="container-fluid" ng-controller="IndexController">
-            <div class="row main-image">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="main-title">
-                                <img src="static/images/logo.png">
-                                <p>Folha Limpa</p>
-                            </h1>
-                        </div>
-                    </div>
-
-                    <div class="row search">
-                        <div class="col-lg-12">
-                            Quero analisar os
-                            <select name="select" class="type-select">
-                                <option value="pagamentos" selected>Pagamentos</option> 
-                                <option value="cargos">Cargos</option>
-                            </select>
-                            da Câmara de Cabedelo
-                        </div>
-                    </div>
-
-                    <div class="row search-button">
-                        <div class="col-lg-12">
-                            <a class="btn btn-success" href="#" role="button">Analisar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row main-content">
-                <div class="col-lg-4" ng-repeat="item in cases">
-                    <a href={{item.href}} class="no-underline">
-                    <div class="preset-query">
-                        <div class="preset-bg-holder">
-                            <div class="preset-bg" ng-style="{'background-image': 'url(static/images/{{item.img}}.png)'}"></div>
-                        </div>
-                        <p>{{item.title}}</p>
-                    </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row footer">
-                <div class="col-lg-12">
-                    Projeto desenvolvido no Hackfest 2017
-                </div>
-            </div>
-        </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="app/app.js"></script>
-    </body>
+        <div ng-view></div>
+   </body>
 </html>
+
