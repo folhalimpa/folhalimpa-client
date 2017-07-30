@@ -1,6 +1,8 @@
 <div class="container-fluid">
+
     <div class="row main-image">
         <div class="col-lg-12">
+
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="main-title">
@@ -10,61 +12,46 @@
                 </div>
             </div>
 
-            <!-- <div class="row search"> -->
-            <!--     <div class="col&#45;lg&#45;12"> -->
-            <!--         Quero analisar os -->
-            <!--         <select name="select" class="type&#45;select"> -->
-            <!--             <option value="pagamentos" selected>Pagamentos</option>  -->
-            <!--             <option value="cargos">Cargos</option> -->
-            <!--         </select> -->
-            <!--         da Câmara de Cabedelo -->
-            <!--     </div> -->
-            <!-- </div> -->
-
-
             <div ng-controller="AnalyzeFormController">
                 <div class="row search">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-inline">
-                                <div class="form-group">
-                                    <span>Quero analisar</span>
+                    <div class="col-lg-12">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <span>Quero analisar</span>
 
-                                    <select ng-model="analysisType" name="select"
-                                            class="form-control input-lg" style="text-align-last: center;"
-                                            ng-init="analysisType='pagamentos'">
-                                        <option value="pagamentos" selected>os pagamentos</option> 
-                                        <option value="cargos">o acúmulo de cargos</option>
-                                    </select>
+                                <select ng-model="analysisType" name="select"
+                                        class="form-control input-lg" style="text-align-last: center;"
+                                        ng-init="analysisType='pagamentos'">
+                                    <option value="pagamentos" selected>os pagamentos</option> 
+                                    <option value="cargos">o acúmulo de cargos</option>
+                                </select>
 
-                                    <span ng-show="analysisType === 'pagamentos'">no(a)</span>
-                                    <span ng-show="analysisType !== 'pagamentos'">na</span>
+                                <span ng-show="analysisType === 'pagamentos'">no(a)</span>
+                                <span ng-show="analysisType !== 'pagamentos'">na</span>
 
-                                    <span ng-show="analysisType === 'pagamentos'">
+                                <span ng-show="analysisType === 'pagamentos'">
                                     <select  
-                                            selectpicker
-                                            class="unidade-picker"
-                                             ng-model="model"
-                                             toggle-dropdown
-                                             data-live-search="true"
-                                             data-none-selected-text=""
-                                             data-size=10
-                                             ng-options="c.nome for c in names">
+                                      selectpicker
+                                      class="unidade-picker"
+                                      ng-model="model"
+                                      toggle-dropdown
+                                      data-live-search="true"
+                                      data-none-selected-text=""
+                                      data-size=10
+                                      ng-options="c.nome for c in names">
                                     </select>
-                                    </span>
+                                </span>
 
-                                    <span ng-show="analysisType !== 'pagamentos'">Paraíba</span>
-
-                                </div>
+                                <span ng-show="analysisType !== 'pagamentos'">Paraíba</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="row search-button">
-                    <div class="col-lg-12">
-                        <button class="btn btn-default" ng-click="analyzeInitial()">Analisar</button>
-                    </div>
+            <div class="row search-button">
+                <div class="col-lg-12">
+                    <button class="btn btn-default" ng-click="analyzeInitial()">Analisar</button>
                 </div>
             </div>
         </div>
