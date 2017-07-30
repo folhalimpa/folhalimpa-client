@@ -8,12 +8,16 @@
     
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <title>Folha Limpa</title>
-    <link rel="stylesheet" href="css/popoto.min.css">
     <link rel="alternate stylesheet" title="neo4j" href="css/popoto.neo4j.css" disabled>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/popoto.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/analytics.js"></script>
+    <script src="js/node_modules/countup.js/dist/countUp.js"></script>
+
+ 
         <style>
         #popoto-graph:fullscreen {
             width: 100%;
@@ -79,129 +83,100 @@ input, select, textarea{
     </style>
 </head>
 <body class="ppt-body">
-<header class="ppt-header2">
-    <div class="ppt-section-header">
-        <span class="ppt-header-span">Folha Limpa: Avaliador de Acúmulo de Cargos</span>
-        <br>
-        Clique aqui para um vídeo explicativo
-        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 top-bar">
+                    <h1><a href="/">Folha Limpa</a></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container internal-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Navegador de Acúmulo de Cargos 
+                                                na Paraíba</h2>
+<div class="help-tip" >    
+    <p>Precisa de ajuda? Clique <a href="#">aqui</a>.</p>
+</div>
+                                                
+                    <p class="time-period">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    abr/2017</p>
+                </div>
+            </div>
+        </div>
+            <div class="row stats">
+                <div class="col-lg-3">
+                    <h3>Número de Servidores</h3>
+                    <p class=value id="servidoresAvaliados" />4726</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Número de Municípios</h3>
+                    <p class=value id="municipiosAvaliados" >42840</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Número de Orgãos</h3>
+                    <p class=value id="orgaosAvaliados" >4726</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Número de Cargos</h3>
+                    <p class=value id="cargosAvaliados" >4726</p>
+                </div>
 
-    </div>
+            </div>
+        
 
-</header>
 <!-- Message section -->
 
 <section class="ppt-section-main">
-<body>
-    <!--
-<div id="text-carousel" class="carousel slide" data-ride="carousel">
-    
-
-    <div class="row">
-        <div class="col-xs-offset-3 col-xs-6">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="carousel-content">
-                        <div>
-                            <p>Avaliador de Acumulo de Cargos: Um poderoso Banco de Grafos suporta a solução de navegação por Servidores, Orgaos, Remunerações e Municipios do Local de Trabalho  de Cada Servidor da Paraíba que recebe 3 ou mais remunerações em um mesmo mês.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>                          
-                            <p>Nossa solução simplifica a visualização de uma relação de trabalho com quase 18 mil nós e 21 mil relacionamentos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>                          
-                            <p>É lícita a acumulação de cargos de juiz com professor ou um cargo de promotor ou procurador do ministério público com professor.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>
-                            <p>Limitação ao Ato de Acumular: Todas as exceções só permitem a acumulação de DOIS cargos, empregos e funções, ou proventos de aposentadoria, não sendo possível acumulação de mais de dois vínculos, conforme já decidido pelo STF, a exemplo dos RE 381204--RS e RE 26929-DF, ressalvando-se o disposto no § 10 do Art. 37 da Constituição Federal </p> 
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>                          
-                            <p>É lícita a acumulação de proventos de aposentadoria nas seguintes situações: 1. Com Cargo eletivo ou em comissão; 2. Com outras aposentadorias, desde que ambas decorrentes de cargos acumuláveis; 3. com remuneração de servidor ativo, se cargos acumuláveis. É importante salientar que os benefícios (aposentadorias e pensões) concedidos pelo Regime Geral de Previdência Social – RGPS/INSS, não serão considerados para efeitos de acumulação, conforme previsto no §10 do artigo 37 da Constituição da República</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#text-carousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
- <a class="right carousel-control" href="#text-carousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-
-</div-->
-</body>
-<!--
-<section class="ppt-section-tips">
-    *IMPORTANTE*: Apresentamos abaixo as remunerações recebidas por Servidores de orgãos estaduais e municipais da Paraíba.
-    <br>
-    Considerando as limitações dos dados disponíveis para análise da folha de pagamento, é necessário que a avaliação leve em consideração os seguintes pontos:
-    <br>
-    1) Remunerações diferentes não implica em vínculos diferentes. É necessário diferentes vínculos para caracterizar o acúmulo de cargos.
-    <br>
-    2) Há situações previstas em lei que permitem que servidores acumulem cargos. Caso tenha dúvidas, veja a cartilha de acúmulo de cargos do TCE-PB disponível <a href="http://portal.tce.pb.gov.br/wp-content/uploads/2014/10/Cartilha%20acumulacoes%202014.pdf">aqui</a>     
-    <br>
-    3) Nas consultas por Municípios, Orgãos ou Cargos, é possível que o resultado apresente menos de 3 remunerações. Isso ocorrerá nos casos onde o Servidor possui remunerações relacionadas a outros orgãos, municípios ou cargos <br>
-    que estão fora do filtro da consulta.
-    <br>
-    Visualize o video para entender como utilizar o navegador.
-    <br>
-<iframe width="840" height="630" align="center" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe> 
-</section-->
-        <span class="ppt-header-span">Busca -</span> Consultar Banco de Grafos (Exemplo: nome do servidor)
-        
-        <form id="filter-form">
+        <form id="filter-form" class="ppt-header-busca">
             <label>
-                <input id="constraint" type="text" style="width: 500px;" value="">
+                <input id="constraint" type="text" style="width: 500px;" placeholder="Consulta por nome do servidor">
             </label>
-            <input id="filter-button" type="button" value="Consultar">
-            <input id="clean-button" type="button" value="Limpar Consulta">
+            <input id="filter-button" type="button" value="Consultar" class="btn btn-default">
+            <input id="clean-button" type="button" value="Limpar Consulta" class="btn btn-default">
+            <input id="reiniciar-button" type="button" value="Reiniciar Grafo" class="btn btn-default">
+    <button type="button" class="btn btn-default" id="resultado-button">
+        <i class="fa fa-share" aria-hidden="true"></i>
+        Exportar
+    </button>
+            
         </form>
 
-    <div class="ppt-container-graph">
-        <nav id="popoto-taxonomy" class="ppt-taxo-nav">
-            <!-- Label/taxonomy filter will be generated here -->
-            <span class="ppt-header-span">Consulta Principal:</span><br><br>
-        </nav>
-        
+    <div class="ppt-container-graph">        
         <nav class="ppt-taxo-nav">
+            <span class="ppt-header-spanPrincipal">Menu de Consultas</span><br><br>
             <div id="saves">
-                <span class="ppt-header-span">Pesquisas Recomendadas:</span><br><br>
+                <span class="ppt-header-span">Consultas Prontas:</span><br><br>
                 <ul class="ppt-taxo-ul">
                     <li id="save-1" value="Person"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
                             class="ppt-label" title="Load Graph">Trabalham em Joao Pessoa</span></li>
                     <li id="save-2" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
                             class="ppt-label" title="Load Graph">Trabalham em Campina Grande</span></li>
                     <li id="save-3" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
-                            class="ppt-label" title="Load Graph">Recebem 5 remunerações</span></li>
+                            class="ppt-label" title="Load Graph">Recebem 5 Remunerações</span></li>
                     <li id="save-4" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
-                            class="ppt-label" title="Load Graph">Recebem 4 remunerações</span></li>
-                        </ul>
-                <hr>
-                <br>
+                            class="ppt-label" title="Load Graph">Recebem 4 Remunerações</span></li>                    
+                    <li id="save-4b" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Recebem 3 Remunerações</span></li>                    
+                    <li id="save-5" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Possuem cargo de Médico</span></li>
+                    <li id="save-6" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Possuem cargo de Professor</span></li>               
+                    <li id="save-7" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Possuem cargo de Deputado</span></li>
+                    <li id="save-8" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Possuem cargo de Vereador</span></li>
+                    <li id="save-9" value="Movie"><span class="ppt-icon ppt-taxo-tag">&nbsp;</span><span
+                            class="ppt-label" title="Load Graph">Possuem cargo de Prefeito</span></li>                            
+                    </ul>                        
+                        
             </div>
-            <li id="popoto-taxonomy" class="ppt-taxo-nav">
-                
-            </li>
+            <br>
+        <div id="popoto-taxonomy" class="ppt-taxo-nav2">
+            <!-- Label/taxonomy filter will be generated here -->
+            <span class="ppt-header-span">Consulta Inicial:</span><br><br>          
+        </div>
         </nav>
         
 
@@ -216,9 +191,7 @@ input, select, textarea{
         <!-- The total results count is updated with a listener defined in script -->
         RESULTADOS <span id="result-total-count" class="ppt-count"></span>        
     </div>
-    <br>
-    <input id="resultado-button" type="button" value="Exportar Resultado" class="botaoresultado">
-    <br>
+    <!--input id="resultado-button" type="button" value="Exportar" class="btn btn-default"-->
     <div id="popoto-results" class="ppt-container-results">
         <!-- Results will be generated here -->
     </div>
@@ -233,6 +206,8 @@ popoto.tools.SAVE_GRAPH = false;
     // disable toggle taxonomy tool
 popoto.tools.TOGGLE_TAXONOMY = false;
 
+
+popoto.graph.LINK_DISTANCE = 175;
 
 // URL used to access Neo4j REST API to execute queries.
 popoto.rest.CYPHER_URL = "http://hobby-ilkdimdboeaggbkealaoampl.dbs.graphenedb.com:24789/db/data/transaction/commit";
@@ -317,7 +292,7 @@ popoto.provider.nodeProviders = {
                        if (node.type === popoto.graph.node.NodeTypes.GROUP) {
                            return "css/image/node-gray.png";
                        }
-                    }2
+                    }
                 } else {
                     return "css/image/node-orange.png";
                 }
@@ -584,7 +559,92 @@ popoto.result.onTotalResultCount(function (count) {
                     }
                 }
             ]
+        },        
+        "save-4b": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "PossuiRemuneracoes",
+                    node: {
+                        label: "Remuneracoes",
+                        value: {
+                          nremuneracoes: "3" 
+                        }
+                    }
+                }
+            ]
+        },        
+        "save-5": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "Exerce",
+                    node: {
+                        label: "Cargo",
+                        value: {
+                          nome: "MEDICO" 
+                        }
+                    }
+                }
+            ]
+        },        
+        "save-6": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "Exerce",
+                    node: {
+                        label: "Cargo",
+                        value: {
+                          nome: "PROFESSOR" 
+                        }
+                    }
+                }
+            ]
+        },        
+        "save-7": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "Exerce",
+                    node: {
+                        label: "Cargo",
+                        value: {
+                          nome: "DEPUTADO" 
+                        }
+                    }
+                }
+            ]
+        },        
+        "save-8": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "Exerce",
+                    node: {
+                        label: "Cargo",
+                        value: {
+                          nome: "VEREADOR" 
+                        }
+                    }
+                }
+            ]
+        },        
+        "save-9": {
+            label: "Servidor",
+            rel: [
+                {
+                    label: "Exerce",
+                    node: {
+                        label: "Cargo",
+                        value: {
+                          nome: "PREFEITO" 
+                        }
+                    }
+                }
+            ]
         }        
+
     };
 
     /**
@@ -616,12 +676,12 @@ popoto.result.onTotalResultCount(function (count) {
         filterData();
     });
 
+    d3.select("#reiniciar-button").on("click", function (d) {
+        popoto.tools.resetServidor();
+    });
+
     d3.select("#resultado-button").on("click", function () {
-        //d = a.result.parseGraphResultData(b);
-        //window.alert(d);
-       //popoto.provider
-        saida = popoto.getResultsToExport()
-        window.alert(saida)
+        popoto.result.exportarResultado();
     });
 
     d3.select("#filter-button").on("click", function (d) {
@@ -647,6 +707,26 @@ popoto.result.onTotalResultCount(function (count) {
 
 popoto.logger.LEVEL = popoto.logger.LogLevels.INFO;
 popoto.start("Servidor");
+
+var options = {
+  useEasing : true, 
+  useGrouping : true, 
+  separator : ',', 
+  decimal : '.', 
+};
+var servidoresAvaliadosExec = new CountUp("servidoresAvaliados", 0, 4726, 0, 2.5, options);
+var municipiosAvaliadosExec = new CountUp("municipiosAvaliados", 0, 200, 0, 2.5, options);
+var cargosAvaliadosExec = new CountUp("cargosAvaliados", 0, 420, 0, 2.5, options);
+var orgaosAvaliadosExec = new CountUp("orgaosAvaliados", 0, 350, 0, 2.5, options);
+servidoresAvaliadosExec.start();
+municipiosAvaliadosExec.start();
+cargosAvaliadosExec.start();
+orgaosAvaliadosExec.start();
+
+</script>
+<script>
+
+
 </script>
 </body>
 </html>
