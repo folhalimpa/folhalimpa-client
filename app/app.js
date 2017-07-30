@@ -17,6 +17,8 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
                 controller: 'ServidorController'
             }).
             otherwise({ redirectTo: '/' });
+
+        $locationProvider.html5Mode(true);
     }
 ]);
 
