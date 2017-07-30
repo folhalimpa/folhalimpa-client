@@ -82,7 +82,7 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="row in tableData">
-                                <td><a ng-href="#!/unidade/{{row.idUnidade}}/{{mesInicio}}/{{anoInicio}}/{{mesFim}}/{{anoFim}}">{{row.nomeUnidade | titleCase}}</a></td>
+                                <td><a ng-href="/unidade/{{row.idUnidade}}/{{mesInicio}}/{{anoInicio}}/{{mesFim}}/{{anoFim}}">{{row.nomeUnidade | titleCase}}</a></td>
                                 <td>{{row.cargo | titleCase}}</td>
                                 <td>{{row.data}}</td>
                                 <td>{{row.pagamento | currency:"R$ "}}</td>
