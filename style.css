@@ -235,3 +235,10 @@ td {
     display: inline;
 }
 
+.chart-loading {
+    margin-top: 60px;
+}
+
+.chart-loading p {
+    margin-top: 12px;
+}

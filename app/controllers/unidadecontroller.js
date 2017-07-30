@@ -47,6 +47,8 @@ folhaLimpaApp.controller('UnidadeController',
 
     // carrega informações para o gráfico
     var loadChartData = function() {
+        $scope.chartLoading = true;
+
         $http.get(PAGAMENTOS_URL).then(function(response) {
             responseData = response.data.results.slice(0, 20);
             
@@ -58,6 +60,7 @@ folhaLimpaApp.controller('UnidadeController',
 
             $scope.$broadcast("DataReady", {elementid: "treemapchart", data: $scope.chartData });
 
+            $scope.chartLoading = false;
         }, function(response) { console.log("erro") });
     };
 
