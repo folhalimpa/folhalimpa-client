@@ -55,7 +55,7 @@ folhaLimpaApp.controller('ServidorController',
                 var dateToShow = dateElements[1] + "/" + dateElements[0];
                 var date = new Date(dateElements[0], dateElements[1]-1);
 
-                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": index, "data": date, "text": dateToShow})
+                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": element.nome_unidade, "data": date})
             });
 
             $scope.$broadcast("DataReady", {elementid: "barchart", data: $scope.chartData });
