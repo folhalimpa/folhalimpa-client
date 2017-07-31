@@ -47,15 +47,15 @@ folhaLimpaApp.controller('ServidorController',
     // carrega informações para o gráfico
     var loadChartData = function() {
         $http.get(PAGAMENTOS_URL).then(function(response) {
-            responseData = response.data.results.slice(0, 15);
-            
+            responseData = response.data.results;
             $scope.chartData = [];
 
             responseData.forEach(function(element, index) {
                 var dateElements = element.data_pagamento.split("-");
-                var dateToShow = dateElements[0] + "/" + dateElements[1];
+                var dateToShow = dateElements[1] + "/" + dateElements[0];
+                var date = new Date(dateElements[0], dateElements[1]-1);
 
-                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": index, "data": dateToShow})
+                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": index, "data": date, "text": dateToShow})
             });
 
             $scope.$broadcast("DataReady", {elementid: "barchart", data: $scope.chartData });

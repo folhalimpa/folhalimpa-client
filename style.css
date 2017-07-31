@@ -242,3 +242,7 @@ td {
 .chart-loading p {
     margin-top: 12px;
 }
+
+#timeline {
+    display: none;
+}

@@ -11,8 +11,11 @@
                     x: '@',
                     y: '@',
                     time: '@?',
+                    timeline: '=?',
                     size: '@?',
-                    resize: '@?'
+                    format: '@?',
+                    resize: '@?',
+                    text: '@?'
                 }),
                 template: angularD3plusUtils.template,
                 link: angularD3plusUtils.link,
@@ -301,6 +304,7 @@
                     if ($scope.shape) services.setvar($scope.viz.shape, $scope.shape);
                     if ($scope.size) services.setvar($scope.viz.size, $scope.size);
                     if ($scope.time) services.setvar($scope.viz.time, $scope.time);
+                    if ($scope.timeline) services.setvar($scope.viz.timeline, $scope.timeline);
                     if ($scope.x) services.setvar($scope.viz.x, $scope.x);
                     if ($scope.y) services.setvar($scope.viz.y, $scope.y);
                     if ($scope.coords) services.setvar($scope.viz.coords, $scope.coords);
