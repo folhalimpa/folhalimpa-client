@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;
-    height: 450px;
+    padding-bottom: 30px;
 }
 
 .main-title {
@@ -36,9 +36,74 @@ body {
     margin-top: 20px;
 }
 
+.analisar {
+    color: #fff;
+    background-color: #1a9ccc;
+    border-color: #0e5570;
+}
+
+.analisar:hover {
+    color: #eee;
+    background-color: #178cb7;
+    border-color: #0e5570;
+}
+
+.descricao {
+    background-color: #033649;
+    color: #fff;
+    text-align: center;
+    padding: 70px 10px 50px 10px;
+    letter-spacing: 1px;
+}
+
+.descricao h3 {
+    color: #e3f3f9;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.data {
+    background-color: #033649;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+.data .icon {
+    font-size: 42px;
+    margin-bottom: 0;
+}
+
+.data h2 {
+    color: #e3f3f9;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.data h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.data p {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.main-content-title {
+    background-color: #033649;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.main-content-title h2 {
+    color: #e3f3f9;
+    letter-spacing: 2px;
+}
+
 .main-content {
     background-color: #033649;
-    padding: 12px 0 24px 0;
+    padding: 30px 0 24px 0;
 }
 
 .preset-query {
