@@ -16,6 +16,9 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
                 templateUrl: 'app/pages/servidor.html',
                 controller: 'ServidorController'
             }).
+            when('/faq/', {
+                templateUrl: 'app/pages/faq.html',
+            }).
             otherwise({ redirectTo: '/' });
 
         $locationProvider.html5Mode(true);

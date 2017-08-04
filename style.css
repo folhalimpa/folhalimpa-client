@@ -19,6 +19,17 @@ body {
     letter-spacing: 3px;
 }
 
+.menu {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
+.menu a {
+    color: #fff;
+    margin-left: 10px;
+}
+
 .main-title img {
     margin-bottom: 12px;
 }
@@ -29,7 +40,6 @@ body {
     text-align: center;
     margin-top: 50px;
 }
-
 
 .search-button {
     text-align: center;
@@ -310,4 +320,21 @@ td {
 
 #timeline {
     display: none;
+}
+
+
+.faq {
+    text-align: left;
+}
+
+.faq h2 {
+    text-align: center;
+}
+
+.faq h3 {
+    margin-top: 40px;
+}
+
+.faq + div {
+    margin-top: 40px;
 }
