@@ -242,6 +242,7 @@
                     data: '=',
                     id: '@',
                     size: '@?',
+                    color: '@?',
                     format: '@?',
                     resize: '@?',
                     text: '@?'

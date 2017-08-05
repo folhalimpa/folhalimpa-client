@@ -26,6 +26,8 @@ folhaLimpaApp.controller('UnidadeController',
         $window.location.href = PAGAMENTOS_CSV_URL;
     };
 
+    $scope.tooltipConf = ["pagamento", "data"];
+
     // carrega informações sobre os pagamentos de uma unidade gestora
     var loadInfo = function() {
         $http.get(APIURL + "unidadesgestoras/" + unidadeId).then(function(response) {
@@ -51,11 +53,13 @@ folhaLimpaApp.controller('UnidadeController',
 
         $http.get(PAGAMENTOS_URL).then(function(response) {
             responseData = response.data.results.slice(0, 20);
-            
             $scope.chartData = [];
 
             responseData.forEach(function(element, index) {
-                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": index, "text": element.nome_servidor})
+                var dateElements = element.data_pagamento.split("-");
+                var dateToShow = dateElements[1] + "/" + dateElements[0];
+
+                $scope.chartData.push({"pagamento": parseFloat(element.valor), "id": index, "text": element.nome_servidor, "data": dateToShow})
             });
 
             $scope.$broadcast("DataReady", {elementid: "treemapchart", data: $scope.chartData });
