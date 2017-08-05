@@ -4,7 +4,7 @@ Folha Limpa é um projeto do Hackfest 2017 que tem como objetivo exibir visualiz
 
 O Folha Limpa pode ser acessado no endereço: [folhalimpa.org](http://folhalimpa.org/).
 
-## Como executar
+## Como executar localmente
 
 Instale as dependências usando o npm:
 
