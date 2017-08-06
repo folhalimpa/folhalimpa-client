@@ -6,16 +6,10 @@ O Folha Limpa pode ser acessado no endereço: [folhalimpa.org](http://folhalimpa
 
 ## Como executar localmente
 
-Instale as dependências usando o npm:
+O Folha Limpa utiliza o [Docker](https://www.docker.com) para sua execução.
 
-```
-npm install
-```
+Pra construir a imagem do docker do client, execute de dentro da raiz do projeto:
 
-Execute o projeto:
+`docker-compose build client`
 
-```
-npm start
-```
-
-Abra no seu navegador a URL: `http://localhost:8000/`
+O docker construirá uma imagem a partir do `Dockerfile` e depois que o processo terminar você verá uma imagem chamada `fl-client` quando executar o comando `docker images`. Para criar um container a partir da imagem criada no passo anterior, execute `docker-compose up client`. Quando o processo terminar, você deverá ter o client rodando na porta 80. Para verificar, use a url http://127.0.0.1 no seu navegador.
