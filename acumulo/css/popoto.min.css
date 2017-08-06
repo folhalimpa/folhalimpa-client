@@ -461,7 +461,7 @@
 
 .ppt-taxo-tag:before {
     content: "\00f02b";
-    color: #8bb71a
+    color: #47bae5;
 }
 
 .ppt-div-graph {
@@ -604,11 +604,12 @@ h3 {
 }
 
 .ppt-header-span {
-    color: #8bb71a
+    /*color: #8bb71a*/
+    color: #47bae5;
 }
 
 .ppt-header-spanPrincipal {
-    color: #8bb71a;
+    color: #47bae5;
     text-align: left;
     font-size: 22px;
 }
@@ -699,7 +700,9 @@ h3 {
 }
 
 .ppt-label {
-    cursor: pointer
+    cursor: pointer;
+    
+
 }
 
 .ppt-label:hover {

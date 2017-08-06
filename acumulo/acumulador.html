@@ -96,7 +96,7 @@ input, select, textarea{
                     <h2>Navegador de Acúmulo de Cargos 
                                                 na Paraíba</h2>
 <div class="help-tip" >    
-    <p>Precisa de ajuda? Clique <a href="#">aqui</a>.</p>
+    <p>Precisa de ajuda? Clique <a href="http://folhalimpa.org/faq/">aqui</a>.</p> 
 </div>
                                                 
                     <p class="time-period">
@@ -108,19 +108,19 @@ input, select, textarea{
             <div class="row stats">
                 <div class="col-lg-3">
                     <h3>Número de Servidores</h3>
-                    <p class=value id="servidoresAvaliados" />4726</p>
+                    <p class=value id="servidoresAvaliados" />4682</p>
                 </div>
                 <div class="col-lg-3">
                     <h3>Número de Municípios</h3>
-                    <p class=value id="municipiosAvaliados" >42840</p>
+                    <p class=value id="municipiosAvaliados" >200</p>
                 </div>
                 <div class="col-lg-3">
                     <h3>Número de Orgãos</h3>
-                    <p class=value id="orgaosAvaliados" >4726</p>
+                    <p class=value id="orgaosAvaliados" >418</p>
                 </div>
                 <div class="col-lg-3">
                     <h3>Número de Cargos</h3>
-                    <p class=value id="cargosAvaliados" >4726</p>
+                    <p class=value id="cargosAvaliados" >348</p>
                 </div>
 
             </div>
@@ -210,8 +210,11 @@ popoto.tools.TOGGLE_TAXONOMY = false;
 popoto.graph.LINK_DISTANCE = 175;
 
 // URL used to access Neo4j REST API to execute queries.
+
 popoto.rest.CYPHER_URL = "http://hobby-ilkdimdboeaggbkealaoampl.dbs.graphenedb.com:24789/db/data/transaction/commit";
 popoto.rest.AUTHORIZATION = "Basic YWRtaW46Yi5WOXJXbDh2clh3eFAuSzM3cVl4b01Yb0ZINnd2WQ==";
+//popoto.rest.CYPHER_URL = "http://localhost:7474/db/data/transaction/commit";
+//popoto.rest.AUTHORIZATION = "Basic bmVvNGo6MzIzMjMy";
 popoto.provider.nodeProviders = {
     
     "Orgao":{
@@ -711,13 +714,13 @@ popoto.start("Servidor");
 var options = {
   useEasing : true, 
   useGrouping : true, 
-  separator : ',', 
-  decimal : '.', 
+  separator : '.', 
+  decimal : ',', 
 };
-var servidoresAvaliadosExec = new CountUp("servidoresAvaliados", 0, 4726, 0, 2.5, options);
+var servidoresAvaliadosExec = new CountUp("servidoresAvaliados", 0, 4682, 0, 2.5, options);
 var municipiosAvaliadosExec = new CountUp("municipiosAvaliados", 0, 200, 0, 2.5, options);
-var cargosAvaliadosExec = new CountUp("cargosAvaliados", 0, 420, 0, 2.5, options);
-var orgaosAvaliadosExec = new CountUp("orgaosAvaliados", 0, 350, 0, 2.5, options);
+var cargosAvaliadosExec = new CountUp("cargosAvaliados", 0, 348, 0, 2.5, options);
+var orgaosAvaliadosExec = new CountUp("orgaosAvaliados", 0, 418, 0, 2.5, options);
 servidoresAvaliadosExec.start();
 municipiosAvaliadosExec.start();
 cargosAvaliadosExec.start();
