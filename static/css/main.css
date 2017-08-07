@@ -1615,6 +1615,15 @@
     -o-transition: 0.5s;
     -ms-transition: 0.5s;
   }
+
+
+@media screen and (max-width: 938px) {
+  a.hovertext::after {
+    opacity: 1.0;
+  }
+}
+
+
   a.hovertext:hover::after, a.hovertext:focus::after {
     opacity: 1.0;
   }
