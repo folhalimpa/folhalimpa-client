@@ -5,7 +5,15 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'app/pages/initial.html',
+                templateUrl: 'app/pages/initial-novo.html',
+                controller: 'InitialController'
+            }).
+            when('/sobre', {
+                templateUrl: 'app/pages/sobre.html',
+                controller: 'InitialController'
+            }).
+            when('/help', {
+                templateUrl: 'app/pages/help.html',
                 controller: 'InitialController'
             }).
             when('/unidade/:unidadeId/:mesInicio/:anoInicio/:mesFim/:anoFim', {

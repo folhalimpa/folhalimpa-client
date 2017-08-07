@@ -1,0 +1,167 @@
+		<div class="page-wrap">
+
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+            <li><a href="/" class="active"><span class="icon fa-home"></span></a></li>
+            <li><a href="dados.html"><span class="icon fa-bar-chart"></span></a></li>
+            <li><a href="sobre/"><span class="icon fa-file-text-o"></span></a></li>
+            <li><a href="help/"><span class="icon fa-question"></span></a></li>
+					</ul>
+				</nav>
+
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Banner -->
+						<section id="banner">
+							<div class="inner">
+								<img src="static/images/fl.png" alt="" title="Folha Limpa" />
+								<h1>Folha Limpa</h1>
+								<!-- <p>Plataforma para controle de gastos públicos através de folhas de pagamento.</p> -->
+              <div class="index-form" ng-controller="AnalyzeFormController">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <span>Quero analisar</span>
+                      <select ng-model="analysisType" name="select"
+                               class="form-control input-lg" style="text-align-last: center;"
+                               ng-init="analysisType='pagamentos'">
+                        <option value="pagamentos" selected>os pagamentos</option> 
+                        <option value="cargos">o acúmulo de cargos</option>
+                      </select>
+
+                      <span ng-show="analysisType === 'pagamentos'">no(a)</span>
+                      <span ng-show="analysisType !== 'pagamentos'">na</span>
+
+                      <span ng-show="analysisType === 'pagamentos'">
+                        <select selectpicker class="unidade-picker"
+                                ng-model="model" toggle-dropdown
+                                data-live-search="true"
+                                data-none-selected-text=""
+                                data-size=10
+                                ng-options="c.nome for c in names">
+                          </select>
+                      </span>
+
+                      <span ng-show="analysisType !== 'pagamentos'">Paraíba</span>
+                    </div>
+                    <button class="btn btn-default analisar" ng-click="analyzeInitial()">Analisar</button>
+                  </div>
+                </div>
+								<div class="data-icons columns">
+									<div class="column">
+										<img src="static/images/icons/money.png" alt="" title="" />
+										<p class="data-info"><b>18.741.682 <br> Pagamentos </b></p>
+								  </div>
+								  <div class="column">
+										<img src="static/images/icons/employee.png" alt="" title="" />
+								    <p class="data-info"> <b> 332.841 <br> Servidores </b></p>
+								  </div>
+								  <div class="column">
+										<img src="static/images/icons/cityhall.png" alt="" title="" />
+								    <p class="data-info"> <b> 635 <br> Unidades Gestoras </b></p>
+								  </div>
+								</div>
+								<!--<ul class="actions">
+									<li><a href="#galleries" class="button alt scrolly big">Pagamentos</a></li>
+									<li><a href="#galleries" class="button alt scrolly big">Cargos</a></li>
+								</ul> -->
+              
+							</div>
+						</section>
+
+					<!-- Gallery -->
+						<section id="galleries">
+							<!-- Photo Galleries -->
+								<div class="gallery">
+									<header class="special">
+                      <h2>Explore os Dados</h2>
+									</header>
+									<div class="content">
+										<div class="media">
+											<a class="hovertext" title="Prefeitura de João Pessoa" href="/unidade/20/4/2016/3/2017"><img src="static/images/thumbs/joaopessoa.jpg" alt="Teste de Cidade 01" title="João Pessoa" /> </a>
+										</div>
+										<div class="media">
+											<a class="hovertext" title="Prefeitura de Campina Grande" href="/unidade/53/4/2016/3/2017"><img src="static/images/thumbs/campinagrande.jpg" alt="" title="Prefeitura de Campina Grande" /></a>
+										</div>
+										<div class="media">
+											<a class="hovertext" title="Prefeitura de Bayeux" href="/unidade/87/4/2016/3/2017"><img src="static/images/thumbs/bayeux.jpg" alt="" title="Prefeitura de Bayeux" /></a>
+										</div>
+										<div class="media">
+											<a class="hovertext" title="Prefeitura de Lucena" href="/unidade/21/4/2016/3/2017"><img src="static/images/thumbs/lucena.png" alt="" title="Prefeitura de Lucena" /></a>
+										</div>
+										<!-- EXTRAS
+										<div class="media">
+											<a href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" title="This right here is a caption." /></a>
+										</div>
+										<div class="media">
+											<a href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" alt="" title="This right here is a caption." /></a>
+										</div>
+										<div class="media">
+											<a href="images/fulls/03.jpg"><img src="images/thumbs/03.jpg" alt="" title="This right here is a caption." /></a>
+										</div>
+										<div class="media">
+											<a href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" title="This right here is a caption." /></a>
+										</div> -->
+									</div>
+									<footer>
+										<a href="dados.html" class="button big">Veja mais...</a>
+									</footer>
+								</div>
+						</section>
+
+					<!-- Contact -->
+						<section id="contact">
+							<!-- Social -->
+								<div class="social column">
+									<h3>Sobre o Folha Limpa</h3>
+									<p>O Projeto <b>Folha Limpa</b> visa possibilitar o monitoramento e avaliação pela sociedade das folhas de pagamento dos servidores de órgãos estaduais e municipais. Através do Folha Limpa o cidadão verifique quais são as maiores remunerações pagas por orgãos municipais e estaduais e avalia possíveis situações de acúmulo de cargos. </p>
+									<p>O escopo inicial do projeto para a competição HackFest 2017 foi o tratamento dos dados disponibilizados pelo TCE-PB sobre a folha de pagamento de servidores da Paraíba. A ideia é que mais órgão de controle possam disponibilizar os dados para que o <b>Folha Limpa</b> tome uma proporção nacional e permita uma cobrança maior por parte da população.</p>
+									<h3>Siga-nos</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.facebook.com/FolhaLimpa-142556586332624/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</div>
+
+							<!-- Form -->
+								<div class="column">
+									<h3>Contacte-nos</h3>
+									<form action="#" method="post">
+										<div class="field half first">
+											<label for="name">Nome</label>
+											<input name="name" id="name" type="text" placeholder="Nome">
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email">
+										</div>
+										<div class="field">
+											<label for="message">Mensagem</label>
+											<textarea name="message" id="message" rows="4" placeholder="Messagem"></textarea>
+										</div>
+										<ul class="actions">
+											<li><input value="Send Message" class="button" type="submit"></li>
+										</ul>
+									</form>
+								</div>
+
+						</section>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="copyright">
+								&copy; Hackfest 2017: Projeto Folha Limpa</a>.
+							</div>
+						</footer>
+				</section>
+		</div>
+
+		<!-- Scripts -->
+			<!-- <script src="assets/js/jquery.min.js"></script> -->
+			<!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+			<!-- <script src="assets/js/jquery.scrolly.min.js"></script> -->
+			<!-- <script src="assets/js/skel.min.js"></script> -->
+			<!-- <script src="assets/js/util.js"></script> -->
+			<!-- <script src="assets/js/main.js"></script> -->

@@ -48,13 +48,13 @@ body {
 
 .analisar {
     color: #fff;
-    background-color: #1a9ccc;
+    background-color: #19B5FE;
     border-color: #0e5570;
 }
 
 .analisar:hover {
-    color: #eee;
-    background-color: #178cb7;
+    color: #fff;
+    background-color: #019be3;
     border-color: #0e5570;
 }
 
@@ -194,63 +194,115 @@ div.unidade-picker {
 
 /*inside html*/
 
-.top-bar {
+.chart-title {
+    margin: 32px 0 0 0;
+}
+
+#fl-interno .top-bar {
     color: #fff;
     background-color: #031634;
     padding: 12px 0 8px 0;
     text-align: center;
 }
 
-.top-bar a {
+#fl-interno .top-bar a {
     color: #fff;
 }
 
-.top-bar a:hover {
+#fl-interno .top-bar a:hover {
     color: #ccc;
     text-decoration: none;
 }
 
-.top-bar h1 {
+#fl-interno .top-bar h1 {
     font-size: 22px;
     margin: 0;
 }
 
-.internal-content {
+#fl-interno .internal-content {
     text-align: center;
 }
 
-h2  {
+#fl-interno h2 {
     color: #033649;
     margin: 30px 0 3px 0;
     /* font-weight: bold; */
 }
 
-.time-period {
+#fl-interno .time-period {
     color: #999;
 }
 
-.stats {
+#fl-interno .stats {
     margin: 0 0 24px 0;
 }
 
 
-.viz {
+#fl-interno .viz {
     margin: 12px 0 24px 0;
 }
 
-.stats h3 {
+#fl-interno .stats h3 {
     font-size: 15px;
     margin-bottom: 0;
 }
 
-.value {
+#fl-interno .value {
     font-size: 26px;
     font-weight: bold;
 }
 
-h3 {
+#fl-interno h3 {
     color: #033649;
 }
+
+#fl-interno label {
+    display: inline;
+    margin-left: 12px;
+}
+
+#fl-interno .form-control {
+    height: 40px;
+}
+
+#fl-interno .btn {
+    margin-bottom: 2px;
+}
+
+#fl-interno .uib-datepicker-popup table {
+    margin-bottom: 0;
+}
+
+#fl-interno .uib-datepicker-popup th {
+    padding: 0;
+    vertical-align: middle;
+}
+
+#fl-interno .uib-datepicker-popup td {
+    padding: 0;
+}
+
+#fl-interno .uib-datepicker-popup tr {
+    border-width: 0;
+}
+
+#fl-interno .uib-datepicker-popup thead {
+    border-width: 0;
+}
+
+#fl-interno ul li {
+    padding-right: 5px;
+}
+
+#fl-interno tbody a {
+    color: #1b8bbf;
+}
+
+#fl-interno tfoot li {
+    padding: 0;
+}
+
+
 
 .search-form {
     border-top: 1px solid #999;
@@ -337,4 +389,47 @@ td {
 
 .faq + div {
     margin-top: 40px;
+}
+
+.index-form {
+    font-size: 26px;
+    margin: 48px 0 48px 0;
+}
+
+.index-form select {
+    line-height: 24px;
+}
+
+#banner .index-form ul {
+    padding: 0;
+}
+
+#banner .index-form .dropdown-menu a {
+    color: #000;
+}
+
+#banner .column .data-info {
+    margin-bottom: 0;
+}
+
+#banner .unidade-picker, #banner .selectpicker {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color: #555;
+}
+
+
+@media screen and (max-width: 938px) {
+    #banner .data-icons {
+        display: none;
+    }
+}
+
+#banner .data-icons {
+    width: 938px;
+}
+
+@media screen and (max-width: 938px) {
+    #nav {
+        display: none;
+    }
 }
