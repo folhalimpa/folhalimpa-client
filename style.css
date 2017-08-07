@@ -48,13 +48,13 @@ body {
 
 .analisar {
     color: #fff;
-    background-color: #1a9ccc;
+    background-color: #19B5FE;
     border-color: #0e5570;
 }
 
 .analisar:hover {
-    color: #eee;
-    background-color: #178cb7;
+    color: #fff;
+    background-color: #019be3;
     border-color: #0e5570;
 }
 
@@ -338,3 +338,30 @@ td {
 .faq + div {
     margin-top: 40px;
 }
+
+.index-form {
+    font-size: 26px;
+    margin: 48px 0 48px 0;
+}
+
+.index-form select {
+    line-height: 24px;
+}
+
+#banner .index-form ul {
+    padding: 0;
+}
+
+#banner .index-form .dropdown-menu a {
+    color: #000;
+}
+
+#banner .column .data-info {
+    margin-bottom: 0;
+}
+
+#banner .unidade-picker, #banner .selectpicker {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color: #555;
+}
+

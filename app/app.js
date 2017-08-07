@@ -8,6 +8,10 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
                 templateUrl: 'app/pages/initial.html',
                 controller: 'InitialController'
             }).
+            when('/novo', {
+                templateUrl: 'app/pages/initial-novo.html',
+                controller: 'InitialController'
+            }).
             when('/unidade/:unidadeId/:mesInicio/:anoInicio/:mesFim/:anoFim', {
                 templateUrl: 'app/pages/unidade.html',
                 controller: 'UnidadeController'
@@ -21,7 +25,7 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
             }).
             otherwise({ redirectTo: '/' });
 
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
     }
 ]);
 
