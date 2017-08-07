@@ -433,3 +433,28 @@ td {
         display: none;
     }
 }
+
+#banner .inner p {
+    font-size: 16px;
+}
+
+#banner .inner h1 + p {
+    margin-bottom: 3px;
+}
+
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+
+#socialnetworks a {
+    padding: 7px;
+    text-decoration: none;
+}
+
+#socialnetworks {
+    padding-top: 20px;
+}

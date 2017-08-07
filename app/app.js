@@ -16,6 +16,10 @@ folhaLimpaApp.config(['$locationProvider', '$routeProvider',
                 templateUrl: 'app/pages/help.html',
                 controller: 'InitialController'
             }).
+            when('/dados', {
+                templateUrl: 'app/pages/dados.html',
+                controller: 'InitialController'
+            }).
             when('/unidade/:unidadeId/:mesInicio/:anoInicio/:mesFim/:anoFim', {
                 templateUrl: 'app/pages/unidade.html',
                 controller: 'UnidadeController'
