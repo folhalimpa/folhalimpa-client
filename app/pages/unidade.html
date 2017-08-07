@@ -58,7 +58,11 @@
             </div>
         </div>
 
+
         <div class="row" ng-show="activeButton === 'chart' && totalPagamentos != 0">
+            <h3 ng-show="totalPagamentos > 20" class="chart-title">20 Maiores Pagamentos</h3>
+            <h3 ng-show="totalPagamentos <= 20" class="chart-title">{{totalPagamentos}} Maiores Pagamentos</h3>
+
             <div class="chart-loading" ng-show="chartLoading">
                 <img src="/static/images/load.gif">
                 <p>Aguarde, essa operação pode levar alguns segundos</p>
@@ -70,6 +74,8 @@
         </div>
 
         <div class="row" ng-show="activeButton === 'table' && totalPagamentos != 0">
+            <h3 ng-show="totalPagamentos > 500" class="chart-title">500 Maiores Pagamentos</h3>
+            <h3 ng-show="totalPagamentos <= 500" class="chart-title">{{totalPagamentos}} Maiores Pagamentos</h3>
             <div class="col-lg-12">
                 <table st-table="tableData" st-safe-src="rowContent" class="table table-striped" cellspacing="0" width="100%">
                     <thead>
