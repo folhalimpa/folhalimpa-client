@@ -136,7 +136,10 @@ input, select, textarea{
             <input id="filter-button" type="button" value="Consultar" class="btn btn-default">
             <input id="clean-button" type="button" value="Limpar Consulta" class="btn btn-default">
             <input id="reiniciar-button" type="button" value="Reiniciar Grafo" class="btn btn-default">
-    <button type="button" class="btn btn-default" id="resultado-button">
+            <a href="#resultadosconsolidados">
+            <input id="resultadoancora" type="button"  value="Resultados" class="btn btn-default">
+             </a>   
+    <button type="button" class="btn btn-default" id="resultado-button" >
         <i class="fa fa-share" aria-hidden="true"></i>
         Exportar
     </button>
@@ -178,16 +181,17 @@ input, select, textarea{
             <span class="ppt-header-span">Consulta Inicial:</span><br><br>          
         </div>
         </nav>
+
+    <div id="popoto-query" class="ppt-container-query">
+        <!-- Query viewer will be generated here -->
+    </div>
         
 
         <div id="popoto-graph" class="ppt-div-graph">
             <!-- Graph will be generated here -->
         </div>
     </div>
-    <div id="popoto-query" class="ppt-container-query">
-        <!-- Query viewer will be generated here -->
-    </div>
-    <div class="ppt-section-header">
+    <div id="resultadosconsolidados" class="ppt-section-header">
         <!-- The total results count is updated with a listener defined in script -->
         RESULTADOS <span id="result-total-count" class="ppt-count"></span>        
     </div>
@@ -203,6 +207,8 @@ input, select, textarea{
 
 /** Incluindo opcao de salvamento de grafos **/
 popoto.tools.SAVE_GRAPH = false;
+
+
     // disable toggle taxonomy tool
 popoto.tools.TOGGLE_TAXONOMY = false;
 
