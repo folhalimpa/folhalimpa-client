@@ -23,7 +23,7 @@ folhaLimpaApp.controller('AnalyzeFormController',
         }
 
         if ($scope.analysisType === "pagamentos" && id) {
-            $location.path(`unidade/${id}/4/2016/4/2017`);
+            $location.path(`unidade/${id}/4/2016/3/2017`);
         } else if ($scope.analysisType === "cargos") {
             $window.location.href = "/acumulo/acumulador.html";
         }
