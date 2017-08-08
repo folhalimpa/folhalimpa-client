@@ -424,6 +424,12 @@ td {
     }
 }
 
+@media screen and (min-width: 938px) {
+    .to-index {
+        display: none;
+    }
+}
+
 #banner .data-icons {
     width: 938px;
 }
